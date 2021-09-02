@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
     _controller.addListener(() {
       if (_controller.offset >= _controller.position.maxScrollExtent &&
           !_controller.position.outOfRange) {
-        getProfiledata(page);
+        if (profile.totalPages > (page - 1)) getProfiledata(page);
       }
     });
   }
